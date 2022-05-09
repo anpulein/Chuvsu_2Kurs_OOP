@@ -42,6 +42,27 @@ class KnowledgeBase {
 
             return true;
         }
+
+        void addProblem() {
+            problem pr;
+
+            cout << "- Процесс внесения новых данных в базу знаний!" << endl;
+            cout << "Добавьте наименование проблемы: ";
+            cin >> pr.name;
+
+            cout << "Добавьте список вопросов (после окончания добавления вопросов напишите 'end')" << endl;
+            string str;
+            while (true) {
+                cin >> str;
+                if (str.find("end")) {
+                    break;
+                }
+                pr.questions.push_back(str);
+            }
+
+            cout << "Процесс внесения новых данных в базу знаний закончен!" << endl;
+        }
+
     public:
         KnowledgeBase() {
             problem pr = {"Неисправна кнопка перезагрузки", {"Отсутствует реакция на нажатие кнопки включения? ",
