@@ -7,15 +7,17 @@
 
 #include <map>
 #include <string>
-#include <list>
+#include <vector>
 using namespace std;
 
 struct problem {
     string name;
-    list<string> questians;
+    vector<string> questions;
 };
 
 class KnowledgeBase {
+    private:
+        int countProblems = 4;
     protected:
         map<string, bool> dictQuestions = {{"Отсутствует реакция на нажатие кнопки включения? ", false},
                                            {"Все кабели питания подключены правильно? ", false},
@@ -26,7 +28,20 @@ class KnowledgeBase {
                                            {"При нажатии кнопки запуска компьютер начинает работать? ", false},
                                            {"Компьютер сразу прекращает работу? ", false},
                                            {"В процессе загрузки компьютер подает характерный сигнал? ", false}};
-        list<problem> problems;
+        vector<problem> problems;
+
+        bool findAnswerInProblems(int index) {
+            problem pr = problems.at(index);
+            string question;
+            for (int i = 0; i < pr.questions.size(); ++i) {
+                question = pr.questions.at(0);
+                if (!dictQuestions[question]) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     public:
         KnowledgeBase() {
             problem pr = {"Неисправна кнопка перезагрузки", {"Отсутствует реакция на нажатие кнопки включения? ",

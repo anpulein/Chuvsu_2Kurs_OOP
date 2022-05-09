@@ -16,6 +16,19 @@ using namespace std;
 class Expert : public KnowledgeBase{
     private:
         bool isProblemSolved = false;
+
+        void findAnswer() {
+            for (int i = 0; i < problems.size(); ++i) {
+                if (findAnswerInProblems(i)) {
+                    isProblemSolved = true;
+                    break;
+                }
+            }
+
+        }
+
+        
+
     public:
         Expert() = default;
         map<string, bool>::iterator iter;
