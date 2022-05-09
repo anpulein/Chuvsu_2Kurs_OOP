@@ -7,15 +7,36 @@
 
 #include <map>
 #include <string>
+#include <list>
+#include <iostream>
+#include "KnowledgeBase.h"
+
 using namespace std;
 
-struct problems {
-    string name;
-};
-
-class Expert {
+class Expert : public KnowledgeBase{
     private:
-        map<string, bool> dictQuestions;
+        bool isProblemSolved = false;
+    public:
+        Expert() = default;
+        map<string, bool>::iterator iter;
+
+        void askAQuestion() {
+            iter = dictQuestions.begin();
+            string str;
+            while (true) {
+                cout << iter->first << endl << "Ответ: ";
+                cin >> str;
+
+                if (str.find("Да") || str.find("да")) { iter->second = true; }
+                else if (str.find("Нет") || str.find("нет")) { iter->second = false; }
+
+                if (iter == dictQuestions.end()) {
+                    break;
+                }
+
+                iter.operator->();
+            }
+        }
 
 
 };

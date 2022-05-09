@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Headers/Expert.h"
+
 using namespace std;
 
 /**********************Prototype func****************************/
@@ -12,7 +14,8 @@ int main () {
     system("chcp 65001"); // Translate on Russian in console
 
     show_start();
-
+    Expert expert;
+    expert.askAQuestion();
 }
 
 
