@@ -6,9 +6,8 @@
 #define CHUVSU_2KURS_OOP_EXPERT_H
 
 #include <map>
-#include <string>
-#include <list>
 #include <iostream>
+#include <cstring>
 #include "KnowledgeBase.h"
 
 using namespace std;
@@ -27,12 +26,12 @@ class Expert : public KnowledgeBase{
         void showAnswer() {
             string str;
             int answer = findAnswer();
-            cout << "Процесс выявления проблемы завершен. ";
+            cout << "Процесс выявления проблемы завершен. " << endl;
             if (answer == -1) {
                 cout << "По полученным ответам в моей базе знаний не существует подобной проблемы\n Хотели бы вы добавить новую проблему в мою базу знаний? " << endl << "Ответ: ";
                 cin >> str;
 
-                if (str.find("Да") || str.find("да")) { addProblem(); }
+                if (strstr(str.c_str(),"Yes") || strstr(str.c_str(),"yes")) { addProblem(); }
             } else {
                 cout << "Вашей проблемой может являться: " << problems.at(answer).name << endl;
             }
@@ -48,19 +47,21 @@ class Expert : public KnowledgeBase{
         void askAQuestion() {
             iter = dictQuestions.begin();
             string str;
-            while (true) {
+            while (iter != dictQuestions.end()) {
                 cout << iter->first << endl << "Ответ: ";
                 cin >> str;
 
-                if (str.find("Да") || str.find("да")) { iter->second = true; }
-                else if (str.find("Нет") || str.find("нет")) { iter->second = false; }
-
-                if (iter == dictQuestions.end()) {
-                    break;
+                if (strstr(str.c_str(),"Yes") || strstr(str.c_str(),"yes")) {
+                    iter->second = true;
+                }
+                else if (strstr(str.c_str(),"No") || strstr(str.c_str(),"no")) {
+                    iter->second = false;
                 }
 
-                iter.operator->();
+                iter.operator++();
             }
+
+            showAnswer();
         }
 
 

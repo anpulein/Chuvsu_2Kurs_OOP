@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 #include "Headers/Expert.h"
 
 using namespace std;
@@ -16,6 +17,8 @@ int main () {
     show_start();
     Expert expert;
     expert.askAQuestion();
+
+    return 0;
 }
 
 
@@ -25,8 +28,8 @@ void show_start() {
     cout << "|    Вас приветствует экспертная система технического обслуживания ПК     |" << endl;
     cout << "--------------------------------------------------------------------------" << endl;
     cout << "- Для выявления проблемы нужно будет ответить на мои вопросы." << endl;
-    cout << "- Либо да" << endl;
-    cout << "- Либо нет" << endl;
+    cout << "- Либо Yes" << endl;
+    cout << "- Либо No" << endl;
 }
 /****************************************************************/
 
