@@ -3,4 +3,4 @@ project(Chuvsu_2Kurs_OOP)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Chuvsu_2Kurs_OOP Labs/Lab8/Lab8.cpp)
+add_executable(Chuvsu_2Kurs_OOP Labs/Lab8/Lab8.cpp Labs/Lab8/Headers/lesson2.h)
