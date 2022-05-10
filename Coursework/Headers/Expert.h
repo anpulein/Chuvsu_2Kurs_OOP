@@ -51,7 +51,6 @@ class Expert : public KnowledgeBase{
             while (iter != dictQuestions.end()) {
                 cout << iter->first << endl << "Ответ: ";
                 cin >> str;
-                cout << "rf = " << str << endl;
 
                 if (strstr(str.c_str(),"Да") || strstr(str.c_str(),"да")) {
                     iter->second = true;
