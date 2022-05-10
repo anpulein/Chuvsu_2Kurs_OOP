@@ -1,5 +1,4 @@
 #include <iostream>
-#include <windows.h>
 #include "Headers/Expert.h"
 
 using namespace std;
@@ -12,8 +11,6 @@ void show_start(); // show main text
  * Start expert system
  */
 int main () {
-    system("chcp 65001"); // Translate on Russian in console
-
     show_start();
     Expert expert;
     expert.askAQuestion();

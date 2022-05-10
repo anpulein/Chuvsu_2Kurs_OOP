@@ -8,6 +8,7 @@
 #include <map>
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 #include "KnowledgeBase.h"
 
 using namespace std;
@@ -26,17 +27,17 @@ class Expert : public KnowledgeBase{
         void showAnswer() {
             string str;
             int answer = findAnswer();
-            cout << "Process vyyavleniya problemy zavershen. " << endl;
+            cout << "Процесс выявления проблемы завершен. " << endl;
             if (answer == -1) {
-                cout << "Po poluchennym otvetam v moej baze znanij ne sushchestvuet podobnoj problemy\n Hoteli by vy dobavit' novuyu problemu v moyu bazu znanij? " << endl << "Answer: ";
+                cout << "По полученным ответам в моей базе знаний не существует подобной проблемы\n Хотели бы вы добавить новую проблему в мою базу знаний? " << endl << "Answer: ";
                 cin >> str;
 
-                if (strstr(str.c_str(),"Yes") || strstr(str.c_str(),"yes")) { addProblem(); }
+                if (strstr(str.c_str(),"Да") || strstr(str.c_str(),"да")) { addProblem(); }
             } else {
-                cout << "Vashej problemoj mozhet yavlyat'sya: " << problems.at(answer).name << endl;
+                cout << "Вашей проблемой может являться: " << problems.at(answer).name << endl;
             }
 
-            cout << "Spasibo, chto vospol'zovalis' nashej sistemoj obsluzhivaniya. Horoshego dnya:)" << endl;
+            cout << "Спасибо, что воспользовались нашей системой обслуживания. Хорошего дня:)" << endl;
         }
 
 
@@ -48,13 +49,14 @@ class Expert : public KnowledgeBase{
             iter = dictQuestions.begin();
             string str;
             while (iter != dictQuestions.end()) {
-                cout << iter->first << endl << "Answer: ";
+                cout << iter->first << endl << "Ответ: ";
                 cin >> str;
+                cout << "rf = " << str << endl;
 
-                if (strstr(str.c_str(),"Yes") || strstr(str.c_str(),"yes")) {
+                if (strstr(str.c_str(),"Да") || strstr(str.c_str(),"да")) {
                     iter->second = true;
                 }
-                else if (strstr(str.c_str(),"No") || strstr(str.c_str(),"no")) {
+                else if (strstr(str.c_str(),"Нет") || strstr(str.c_str(),"нет")) {
                     iter->second = false;
                 }
 
