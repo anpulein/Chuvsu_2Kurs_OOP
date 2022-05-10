@@ -26,17 +26,17 @@ class Expert : public KnowledgeBase{
         void showAnswer() {
             string str;
             int answer = findAnswer();
-            cout << "Процесс выявления проблемы завершен. " << endl;
+            cout << "Process vyyavleniya problemy zavershen. " << endl;
             if (answer == -1) {
-                cout << "По полученным ответам в моей базе знаний не существует подобной проблемы\n Хотели бы вы добавить новую проблему в мою базу знаний? " << endl << "Ответ: ";
+                cout << "Po poluchennym otvetam v moej baze znanij ne sushchestvuet podobnoj problemy\n Hoteli by vy dobavit' novuyu problemu v moyu bazu znanij? " << endl << "Answer: ";
                 cin >> str;
 
                 if (strstr(str.c_str(),"Yes") || strstr(str.c_str(),"yes")) { addProblem(); }
             } else {
-                cout << "Вашей проблемой может являться: " << problems.at(answer).name << endl;
+                cout << "Vashej problemoj mozhet yavlyat'sya: " << problems.at(answer).name << endl;
             }
 
-            cout << "Спасибо, что воспользовались нашей системой обслуживания. Хорошего дня:)" << endl;
+            cout << "Spasibo, chto vospol'zovalis' nashej sistemoj obsluzhivaniya. Horoshego dnya:)" << endl;
         }
 
 
@@ -48,7 +48,7 @@ class Expert : public KnowledgeBase{
             iter = dictQuestions.begin();
             string str;
             while (iter != dictQuestions.end()) {
-                cout << iter->first << endl << "Ответ: ";
+                cout << iter->first << endl << "Answer: ";
                 cin >> str;
 
                 if (strstr(str.c_str(),"Yes") || strstr(str.c_str(),"yes")) {

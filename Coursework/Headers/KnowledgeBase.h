@@ -19,15 +19,14 @@ class KnowledgeBase {
     private:
         int countProblems = 4;
     protected:
-        map<string, bool> dictQuestions = {{"Отсутствует реакция на нажатие кнопки включения? ", false},
-                                           {"Все кабели питания подключены правильно? ", false},
-                                           {"Провода и коннекторы внетри корпуса пк исправны? ", false},
-                                           {"При отсоединении кнопки перезагрузки от мат.платы компьютер начинает работать? ",false},
-                                           {"При замыкании двух контактов с надписью 'Power Swirch' происходит запуск компьютера? ", false},
-                                           {"Включенный в сеть блок питания не начинает работать при замыкании черного и зеленого контактов? ", false},
-                                           {"При нажатии кнопки запуска компьютер начинает работать? ", false},
-                                           {"Компьютер сразу прекращает работу? ", false},
-                                           {"В процессе загрузки компьютер подает характерный сигнал? ", false}};
+        map<string, bool> dictQuestions = {{"Otsutstvuet reakciya na nazhatie knopki vklyucheniya? ", false},
+                                           {"Vse kabeli pitaniya podklyucheny pravil'no? ", false},
+                                           {"Provoda i konnektory vnetri korpusa pk ispravny? ", false},
+                                           {"Pri otsoedinenii knopki perezagruzki ot mat.platy komp'yuter nachinaet rabotat'? ",false},
+                                           {"Pri zamykanii dvuh kontaktov s nadpis'yu 'Power Swirch' proiskhodit zapusk komp'yutera? ", false},
+                                           {"Vklyuchennyj v set' blok pitaniya ne nachinaet rabotat' pri zamykanii chernogo i zelenogo kontaktov? ", false},
+                                           {"Pri nazhatii knopki zapuska komp'yuter nachinaet rabotat'? ", false},
+                                           {"Komp'yuter srazu prekrashchaet rabotu? ", false}};
         vector<problem> problems;
 
         bool findAnswerInProblems(int index) {
@@ -46,42 +45,44 @@ class KnowledgeBase {
         void addProblem() {
             problem pr;
 
-            cout << "- Процесс внесения новых данных в базу знаний!" << endl;
-            cout << "Добавьте наименование проблемы: ";
+            cout << "- Process vneseniya novyh dannyh v bazu znanij!" << endl;
+            cout << "Dobav'te naimenovanie problemy: ";
             cin >> pr.name;
 
-            cout << "Добавьте список вопросов (после окончания добавления вопросов напишите 'end')" << endl;
+            cout << "Dobav'te spisok voprosov (posle okonchaniya dobavleniya voprosov napishite 'end')" << endl;
             string str;
             while (true) {
                 cin >> str;
-                if (str.find("end")) {
+                if (strstr(str.c_str(),"end")) {
                     break;
                 }
                 pr.questions.push_back(str);
             }
 
-            cout << "Процесс внесения новых данных в базу знаний закончен!" << endl;
+            cout << "Process vneseniya novyh dannyh v bazu znanij zakonchen!" << endl;
         }
 
     public:
         KnowledgeBase() {
-            problem pr = {"Неисправна кнопка перезагрузки", {"Отсутствует реакция на нажатие кнопки включения? ",
-                                                                              "Все кабели питания подключены правильно? ", "Провода и коннекторы внетри корпуса пк исправны? ",
-                                                                              "При отсоединении кнопки перезагрузки от мат.платы компьютер начинает работать? "}};
+            problem pr = {"Neispravna knopka perezagruzki", {"Otsutstvuet reakciya na nazhatie knopki vklyucheniya? ",
+                                                             "Vse kabeli pitaniya podklyucheny pravil'no? ",
+                                                             "Provoda i konnektory vnetri korpusa pk ispravny? ",
+                                                             "Pri otsoedinenii knopki perezagruzki ot mat.platy komp'yuter nachinaet rabotat'? "}};
             problems.push_back(pr);
 
-            pr = {"Неисправна кнопка запуска", {"Отсутствует реакция на нажатие кнопки включения? ",
-                                                                 "Все кабели питания подключены правильно? ", "Провода и коннекторы внетри корпуса пк исправны? ",
-                                                                 "При замыкании двух контактов с надписью 'Power Swirch' происходит запуск компьютера? "}};
+            pr = {"Neispravna knopka zapuska", {"Otsutstvuet reakciya na nazhatie knopki vklyucheniya? ",
+                                                "Vse kabeli pitaniya podklyucheny pravil'no? ",
+                                                "Provoda i konnektory vnetri korpusa pk ispravny? ",
+                                                "Pri zamykanii dvuh kontaktov s nadpis'yu 'Power Swirch' proiskhodit zapusk komp'yutera? "}};
             problems.push_back(pr);
 
-            pr = {"Неисправен блок питания", {"Отсутствует реакция на нажатие кнопки включения? ",
-                                                               "Все кабели питания подключены правильно? ",
-                                                               "Включенный в сеть блок питания не начинает работать при замыкании черного и зеленого контактов? "}};
+            pr = {"Neispraven blok pitaniya", {"Otsutstvuet reakciya na nazhatie knopki vklyucheniya? ",
+                                               "Vse kabeli pitaniya podklyucheny pravil'no? ",
+                                               "Vklyuchennyj v set' blok pitaniya ne nachinaet rabotat' pri zamykanii chernogo i zelenogo kontaktov? "}};
             problems.push_back(pr);
 
-            pr = {"Неисправен какое-либо устройства и срабатывает защита блока питания", {"При нажатии кнопки запуска компьютер начинает работать? ",
-                                                                                                           "Компьютер сразу прекращает работу? "}};
+            pr = {"Neispraven kakoe-libo ustrojstva i srabatyvaet zashchita bloka pitaniya", {"Pri nazhatii knopki zapuska komp'yuter nachinaet rabotat'? ",
+                                                                                              "Komp'yuter srazu prekrashchaet rabotu? "}};
             problems.push_back(pr);
         }
 
