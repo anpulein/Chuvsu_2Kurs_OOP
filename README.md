@@ -1,1 +1,1 @@
-![](../main/title_page/header.pdf)
+![](../main/title_page/header.png)
