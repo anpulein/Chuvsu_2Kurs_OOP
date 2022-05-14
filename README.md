@@ -1,2 +1,2 @@
-# Chuvsu_2Kurs_OOP
-![](https://github.com/blackcater/blackcater/raw/main/images/Hi.gif) 
+# Chuvsu_2Kurs_OOP 
+<img src="" alt="альтернативный текст">
