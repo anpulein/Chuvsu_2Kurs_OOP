@@ -1,2 +1,2 @@
 # Chuvsu_2Kurs_OOP 
-<img src="title_page/header.pdf" alt="альтернативный текст">
+![Описание](https://github.com/dasttalein/Chuvsu_2Kurs_OOP/blob/main/title_page/header.pdf)
