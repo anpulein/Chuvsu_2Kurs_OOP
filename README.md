@@ -1,2 +1,2 @@
-# Chuvsu_2Kurs_OOP
-![](https://github.com/blackcater/blackcater/raw/main/images/Hi.gif) 
+# Chuvsu_2Kurs_OOP 
+![Описание](https://github.com/dasttalein/Chuvsu_2Kurs_OOP/blob/main/title_page/header.pdf)
