@@ -18,7 +18,6 @@ _Semestr_: 3-4
 - [Title-page](#Title-page)
 - [Body](#Body)
 - [Software used](#Software)
-- [Information about the teacher](#Information about the teacher)
 
 
 # Software
