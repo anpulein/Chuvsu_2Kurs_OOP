@@ -11,7 +11,7 @@ _Department_: Вычислительной техники
 # Body
 _Group_: ИВТ-41-20  
 _Student_: Галкин Дмитрий  
-_Teacher_: Обломов Игорь Александрович
+_Teacher_: Обломов Игорь Александрович   
 _Semestr_: 3-4
 
 # Table of contents
