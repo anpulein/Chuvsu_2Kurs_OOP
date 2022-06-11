@@ -12,7 +12,8 @@ _Department_: Вычислительной техники
 _Group_: ИВТ-41-20  
 _Student_: Галкин Дмитрий  
 _Teacher_: Обломов Игорь Александрович   
-_Semestr_: 3-4
+_Semestr_: 3-4  
+_Subject of study_: Объектно-ориентированное программирвоание
 
 # Table of contents
 - [Title-page](#Title-page)
